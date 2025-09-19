@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://lpb2r2p2ffci"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_pfcaf"]
+[ext_resource type="Texture2D" uid="uid://bg7atvw5s46tn" path="res://Reticle.png" id="3_r4e7k"]
+[ext_resource type="AnimationLibrary" uid="uid://da7wcvt3pg58g" path="res://Weapons/Animations/M1911Anim.res" id="3_rw1c3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a7int"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_faj4t"]
+
+[sub_resource type="Animation" id="Animation_4j41k"]
+resource_name = "ScarHReload"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kat8k"]
+_data = {
+"ScarHReload": SubResource("Animation_4j41k")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_pfcaf")
+
+[node name="PlayerHitbox" type="CollisionShape3D" parent="." groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_a7int")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="PlayerEyes" type="Camera3D" parent="Pivot"]
+
+[node name="PlayerRay" type="RayCast3D" parent="Pivot/PlayerEyes"]
+target_position = Vector3(0, 0, -3)
+collide_with_areas = true
+debug_shape_custom_color = Color(0, 1, 0, 1)
+
+[node name="WeaponSlot" type="Node3D" parent="Pivot/PlayerEyes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, -0.245258, -1.32969)
+
+[node name="HUD" type="Control" parent="Pivot/PlayerEyes"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Pivot/PlayerEyes/HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r4e7k")
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="Pivot/PlayerEyes/HUD"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 533.0
+offset_right = 69.0
+offset_bottom = 556.0
+scale = Vector2(2.99816, 3.19204)
+text = "Score: "
+metadata/_edit_use_anchors_ = true
+
+[node name="AmmoCounter" type="Label" parent="Pivot/PlayerEyes/HUD"]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 548.0
+offset_right = 1070.0
+offset_bottom = 609.0
+scale = Vector2(1.96, 1.76)
+text = "Ammo"
+
+[node name="Gunpoint" type="RayCast3D" parent="Pivot/PlayerEyes"]
+target_position = Vector3(0, 0, -50)
+collide_with_areas = true
+
+[node name="Feet" type="CollisionShape3D" parent="." groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("BoxShape3D_faj4t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kat8k"),
+"M1911Anim": ExtResource("3_rw1c3")
+}
+
+[node name="ShotTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

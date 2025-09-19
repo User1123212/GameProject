@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl1hfw0ujswe4"]
+
+[ext_resource type="Script" path="res://Player/Bullet.gd" id="1_jttxo"]
+[ext_resource type="Texture2D" uid="uid://brx41wv82ct2h" path="res://TitleScreen.png" id="2_oo6cq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qsqgn"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y1u46"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpuu8"]
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("2_oo6cq")
+
+[node name="Bullet" type="Node3D" groups=["Bullet"]]
+script = ExtResource("1_jttxo")
+
+[node name="BulletHitbox" type="Area3D" parent="." groups=["Bullet"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BulletHitbox" groups=["Bullet"]]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qsqgn")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." groups=["Bullet"]]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_y1u46")
+material = SubResource("StandardMaterial3D_cpuu8")
+
+[connection signal="body_entered" from="BulletHitbox" to="." method="_on_bullet_hitbox_body_entered"]

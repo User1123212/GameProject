@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SemiAuto" load_steps=5 format=3 uid="uid://cj4271eewnq6x"]
+
+[ext_resource type="Script" path="res://WeaponClasses/Semi-Auto.gd" id="1_mpcu6"]
+[ext_resource type="AnimationLibrary" uid="uid://da7wcvt3pg58g" path="res://Weapons/Animations/M1911Anim.res" id="1_qajhx"]
+[ext_resource type="PackedScene" uid="uid://dee8t7q3dx6by" path="res://Weapons/m_1911_v_1.tscn" id="2_xd71s"]
+[ext_resource type="PackedScene" uid="uid://debm0naui0hq2" path="res://Weapons/M1911_V1.glb" id="3_pith3"]
+
+[resource]
+script = ExtResource("1_mpcu6")
+name = "M1911"
+FireRate = 0.1
+Damage = 1
+Model = ExtResource("3_pith3")
+Animations = ExtResource("1_qajhx")
+BlendModel = ExtResource("2_xd71s")
+ReloadSpeed = 3.5
+Ammo = 8

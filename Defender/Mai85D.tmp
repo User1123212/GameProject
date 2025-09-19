@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7f8nr48o4ywk"]
+
+[ext_resource type="PackedScene" uid="uid://cmk3tta3fu6p" path="res://HUB.glb" id="1_2grqc"]
+[ext_resource type="Script" path="res://Main.gd" id="1_gld7w"]
+[ext_resource type="PackedScene" uid="uid://lpb2r2p2ffci" path="res://Player/Player.tscn" id="2_r7f7u"]
+[ext_resource type="PackedScene" uid="uid://cledsl16sexr1" path="res://Dummy.tscn" id="3_gh074"]
+[ext_resource type="PackedScene" uid="uid://8cktnuooemnh" path="res://Weapons/ScarHDrop.tscn" id="5_5wc88"]
+[ext_resource type="PackedScene" uid="uid://dyld24he1c87y" path="res://Weapons/M1911.tscn" id="5_xq0tv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tj4vj"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_gld7w")
+
+[node name="HUB" parent="." instance=ExtResource("1_2grqc")]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="HUB"]
+transform = Transform3D(99.9999, 0, 0, 0, 1, 0, 0, 0, 99.9999, 0, -0.721871, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_tj4vj")
+
+[node name="Player" parent="." instance=ExtResource("2_r7f7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28147, -0.917402)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.094, 215.21, 0)
+
+[node name="Dummy" parent="." instance=ExtResource("3_gh074")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.5712, 0, 0)
+
+[node name="Dummy2" parent="." instance=ExtResource("3_gh074")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.5712, 0, 5.14129)
+
+[node name="Dummy3" parent="." instance=ExtResource("3_gh074")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.7942, 0, 5.14129)
+
+[node name="M1911" parent="." instance=ExtResource("5_xq0tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14008, 1, 0)
+
+[node name="ScarH" parent="." instance=ExtResource("5_5wc88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5.92757)

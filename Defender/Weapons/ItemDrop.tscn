@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd2up4j61vh35"]
+
+[ext_resource type="Script" path="res://Weapons/DropItem.gd" id="1_23dk6"]
+[ext_resource type="Resource" uid="uid://cuej55vyspp64" path="res://Weapons/ScarH.tres" id="2_n8gjv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrcaw"]
+
+[node name="RigidBody3D" type="RigidBody3D" groups=["Item"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_23dk6")
+Gun = ExtResource("2_n8gjv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Item"]]
+shape = SubResource("BoxShape3D_mrcaw")

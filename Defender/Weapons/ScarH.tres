@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FullAuto" load_steps=3 format=3 uid="uid://cuej55vyspp64"]
+
+[ext_resource type="PackedScene" uid="uid://c13wkqjc2ae01" path="res://Weapons/ScarH.glb" id="1_liqnd"]
+[ext_resource type="Script" path="res://WeaponClasses/Full-Auto.gd" id="3_1nbjm"]
+
+[resource]
+script = ExtResource("3_1nbjm")
+name = "ScarH"
+FireRate = 0.1
+Damage = 1
+Model = ExtResource("1_liqnd")
+BlendModel = ExtResource("1_liqnd")
+ReloadSpeed = 2.0
+Ammo = 35

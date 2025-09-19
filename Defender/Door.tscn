@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgia2bd03nc3s"]
+
+[ext_resource type="Script" uid="uid://b3y07kpspqsrd" path="res://Door.gd" id="1_77u6k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p40iq"]
+size = Vector3(0.1, 5, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p0ooe"]
+size = Vector3(0.1, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3ird"]
+albedo_color = Color(0.396078, 0.117647, 0, 1)
+
+[node name="Door" type="StaticBody3D" groups=["Door"]]
+script = ExtResource("1_77u6k")
+price = 100
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Door"]]
+shape = SubResource("BoxShape3D_p40iq")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." groups=["Door"]]
+mesh = SubResource("BoxMesh_p0ooe")
+material = SubResource("StandardMaterial3D_w3ird")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

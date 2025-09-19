@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7f8nr48o4ywk"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_gld7w"]
+[ext_resource type="PackedScene" uid="uid://lpb2r2p2ffci" path="res://Player/Player.tscn" id="2_r7f7u"]
+[ext_resource type="PackedScene" uid="uid://cledsl16sexr1" path="res://Dummy.tscn" id="3_gh074"]
+[ext_resource type="PackedScene" uid="uid://dd2up4j61vh35" path="res://Weapons/ItemDrop.tscn" id="5_rlrio"]
+[ext_resource type="Resource" uid="uid://cj4271eewnq6x" path="res://Weapons/M1911.tres" id="6_jdkxd"]
+[ext_resource type="PackedScene" uid="uid://curi5kqnu5h68" path="res://CastleLevel.tscn" id="7_n2lce"]
+[ext_resource type="PackedScene" uid="uid://b1at75e04d8xt" path="res://lil_guy.tscn" id="7_wwg3u"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_gld7w")
+
+[node name="Player" parent="." instance=ExtResource("2_r7f7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.28147, -38.1618)
+
+[node name="Dummy2" parent="." instance=ExtResource("3_gh074")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3581, 0, 5.14129)
+
+[node name="Dummy3" parent="." instance=ExtResource("3_gh074")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3201, 0, 5.14129)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("5_rlrio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -18.3936)
+Gun = ExtResource("6_jdkxd")
+
+[node name="RigidBody3D2" parent="." instance=ExtResource("5_rlrio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -23.8804)
+
+[node name="Dummy" parent="." instance=ExtResource("3_gh074")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8504, 0, 0)
+
+[node name="LilGuy" parent="." instance=ExtResource("7_wwg3u")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -12, 0, -5.00482)
+
+[node name="CastleLevel" parent="." instance=ExtResource("7_n2lce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

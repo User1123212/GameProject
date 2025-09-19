@@ -1,0 +1,477 @@
+[gd_scene load_steps=16 format=3 uid="uid://dee8t7q3dx6by"]
+
+[ext_resource type="PackedScene" uid="uid://ctgce0eqpgob5" path="res://Weapons/M1911_V1.blend" id="1_p3f1y"]
+[ext_resource type="AnimationLibrary" uid="uid://da7wcvt3pg58g" path="res://Weapons/Animations/M1911Anim.res" id="2_rsa6b"]
+
+[sub_resource type="Animation" id="Animation_sjtr7"]
+resource_name = "ClipAction"
+length = 3.25
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156, 0.0333333, 1, -0.57098, -0.10632, 0.320156, 0.0666667, 1, -0.578921, -0.118164, 0.320156, 0.1, 1, -0.586872, -0.1373, 0.320156, 0.133333, 1, -0.591844, -0.157813, 0.320156, 0.166667, 1, -0.595795, -0.172427, 0.320156, 0.2, 1, -0.638638, -0.295172, 0.320156, 0.233333, 1, -0.659571, -0.34338, 0.320156, 0.266667, 1, -0.669807, -0.367506, 0.320156, 0.3, 1, -0.677001, -0.393101, 0.320156, 0.333333, 1, -0.685244, -0.420815, 0.320156, 0.366667, 1, -0.700429, -0.45022, 0.320156, 0.4, 1, -0.709422, -0.474483, 0.320156, 0.433333, 1, -0.718274, -0.505608, 0.320156, 0.466667, 1, -0.730208, -0.545333, 0.320156, 0.5, 1, -0.745619, -0.585128, 0.320156, 0.533333, 1, -0.753972, -0.613797, 0.320156, 0.566667, 1, -0.7656, -0.64263, 0.320156, 0.6, 1, -0.775504, -0.666571, 0.320156, 0.633333, 1, -0.782821, -0.685583, 0.320156, 0.666667, 1, -0.790825, -0.704647, 0.320156, 0.7, 1, -0.802889, -0.740867, 0.320156, 0.733333, 1, -0.805905, -0.777191, 0.320156, 0.8, 1, -0.823491, -0.833132, 0.320156, 0.833333, 1, -0.823491, -0.882041, 0.320156, 0.866667, 1, -0.823491, -0.929367, 0.320156, 0.9, 1, -0.823491, -0.997124, 0.320156, 0.933333, 1, -0.823491, -1.07417, 0.320156, 0.966667, 1, -0.823491, -1.14706, 0.320156, 1, 1, -0.823491, -1.2, 0.320156, 1.06667, 1, -0.823491, -1.68, 0.320156, 1.1, 1, -0.823491, -1.8, 0.320156, 1.16667, 1, -0.823491, -1.8, 0.320156, 1.2, 1, -0.765367, -1.26616, -0.308921, 1.23333, 1, -0.748864, -1.11561, -0.446542, 1.26667, 1, -0.74755, -1.10422, -0.433443, 1.3, 1, -0.747089, -1.10015, -0.431806, 1.33333, 1, -0.745245, -1.08387, -0.42526, 1.36667, 1, -0.741913, -1.05458, -0.408892, 1.4, 1, -0.739362, -1.03261, -0.377781, 1.43333, 1, -0.738002, -1.02121, -0.348304, 1.46667, 1, -0.737661, -1.01877, -0.324557, 1.5, 1, -0.737588, -1.01877, -0.298352, 1.53333, 1, -0.736803, -1.01226, -0.278701, 1.56667, 1, -0.736607, -1.01063, -0.273788, 1.6, 1, -0.735995, -1.00575, -0.250861, 1.63333, 1, -0.734509, -0.993544, -0.209101, 1.66667, 1, -0.732236, -0.974014, -0.179627, 1.7, 1, -0.732154, -0.974014, -0.150147, 1.73333, 1, -0.731428, -0.969131, -0.086275, 1.76667, 1, -0.730958, -0.959343, -0.0143123, 1.8, 1, -0.730958, -0.93893, 0.0485612, 1.83333, 1, -0.730958, -0.89647, 0.0942875, 1.86667, 1, -0.730958, -0.85401, 0.133481, 1.9, 1, -0.730958, -0.821348, 0.180024, 1.93333, 1, -0.753183, -0.80665, 0.204521, 1.96667, 1, -0.793718, -0.80665, 0.222136, 2, 1, -0.822506, -0.80665, 0.2926, 2.03333, 1, -0.822506, -0.793461, 0.308589, 2.06667, 1, -0.802311, -0.757016, 0.312587, 2.1, 1, -0.788847, -0.72829, 0.312587, 2.13333, 1, -0.785444, -0.712133, 0.312587, 2.16667, 1, -0.771832, -0.687269, 0.312587, 2.2, 1, -0.771832, -0.665741, 0.312587, 2.23333, 1, -0.761648, -0.636741, 0.312587, 2.26667, 1, -0.751229, -0.61046, 0.312587, 2.33333, 1, -0.736632, -0.568328, 0.312587, 2.36667, 1, -0.7294, -0.546104, 0.312587, 2.4, 1, -0.721231, -0.523887, 0.312587, 2.43333, 1, -0.712785, -0.504015, 0.312587, 2.46667, 1, -0.705278, -0.485615, 0.312587, 2.5, 1, -0.700485, -0.464595, 0.312587, 2.53333, 1, -0.69211, -0.441241, 0.312587, 2.56667, 1, -0.68554, -0.420522, 0.312587, 2.6, 1, -0.681308, -0.403579, 0.312587, 2.63333, 1, -0.677737, -0.388507, 0.312587, 2.66667, 1, -0.670932, -0.370362, 0.312587, 2.7, 1, -0.657323, -0.343144, 0.312587, 2.73333, 1, -0.650519, -0.319328, 0.312587, 2.76667, 1, -0.643714, -0.298914, 0.312587, 2.8, 1, -0.635776, -0.281903, 0.312587, 2.83333, 1, -0.631239, -0.268294, 0.312587, 2.86667, 1, -0.622167, -0.245613, 0.312587, 2.9, 1, -0.616496, -0.229735, 0.312587, 2.93333, 1, -0.610826, -0.216126, 0.312587, 2.96667, 1, -0.604021, -0.201383, 0.312587, 3, 1, -0.597217, -0.183238, 0.312587, 3.03333, 1, -0.590412, -0.162824, 0.312587, 3.06667, 1, -0.583041, -0.14638, 0.312587, 3.1, 1, -0.57926, -0.130314, 0.312587, 3.13333, 1, -0.57926, -0.117556, 0.312587, 3.16667, 1, -0.57926, -0.117556, 0.312587, 3.2, 1, -0.57926, -0.109995, 0.312587, 3.23333, 1, -0.57926, -0.108105, 0.312587, 3.25, 1, -0.57926, -0.108105, 0.312587)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107, 1.16667, 1, 0.707107, 0, 0, 0.707107, 1.2, 1, 0.898036, 0, 0, 0.439922, 1.23333, 1, 0.931223, 0, 0, 0.364449, 1.43333, 1, 0.931223, 0, 0, 0.364449, 1.46667, 1, 0.925831, 0, 0, 0.377938, 1.5, 1, 0.90232, 0, 0, 0.431067, 1.53333, 1, 0.878149, 0, 0, 0.478388, 1.56667, 1, 0.871716, 0, 0, 0.490012, 1.6, 1, 0.844457, 0, 0, 0.535623, 1.63333, 1, 0.799124, 0, 0, 0.601166, 1.66667, 1, 0.799124, 0, 0, 0.601166, 1.7, 1, 0.764747, 0, 0, 0.644331, 1.73333, 1, 0.727025, 0, 0, 0.686611, 1.76667, 1, 0.707107, 0, 0, 0.707107, 3.25, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_75i14"]
+resource_name = "CylinderAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_ogh5g"]
+resource_name = "GripAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_q0wnw"]
+resource_name = "MuzzleAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_ab2m5"]
+resource_name = "MuzzlePlateAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_e4406"]
+resource_name = "PlaneAction"
+length = 3.58333
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hammer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375, 2.2, 1, -0.546398, 0.333618, 0.375, 2.36667, 1, -0.546815, 0.332572, 0.375, 2.5, 1, -0.547295, 0.331369, 0.375, 2.6, 1, -0.547758, 0.330208, 0.375, 2.7, 1, -0.548315, 0.328813, 0.375, 2.76667, 1, -0.548745, 0.327736, 0.375, 2.83333, 1, -0.549221, 0.326542, 0.375, 2.9, 1, -0.549754, 0.325206, 0.375, 2.96667, 1, -0.550338, 0.323741, 0.375, 3.03333, 1, -0.550981, 0.322131, 0.375, 3.1, 1, -0.551684, 0.320367, 0.375, 3.13333, 1, -0.552058, 0.31943, 0.375, 3.16667, 1, -0.552447, 0.318456, 0.375, 3.2, 1, -0.552856, 0.31743, 0.375, 3.23333, 1, -0.553281, 0.316365, 0.375, 3.26667, 1, -0.553722, 0.31526, 0.375, 3.3, 1, -0.554179, 0.314114, 0.375, 3.33333, 1, -0.554652, 0.312927, 0.375, 3.36667, 1, -0.555149, 0.311683, 0.375, 3.4, 1, -0.555662, 0.310396, 0.375, 3.43333, 1, -0.557394, 0.296098, 0.375, 3.46667, 1, -0.559288, 0.272753, 0.375, 3.5, 1, -0.558026, 0.261261, 0.375, 3.53333, 1, -0.554563, 0.247746, 0.375, 3.56667, 1, -0.549349, 0.234339, 0.375, 3.58333, 1, -0.546451, 0.227654, 0.375)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hammer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107, 2, 1, 0.707105, 0.00147674, 0.00147674, 0.707105, 2.06667, 1, 0.707103, 0.00222941, 0.00222941, 0.707103, 2.13333, 1, 0.7071, 0.00318446, 0.00318446, 0.7071, 2.2, 1, 0.707093, 0.00438447, 0.00438447, 0.707093, 2.23333, 1, 0.707089, 0.00508832, 0.00508832, 0.707088, 2.26667, 1, 0.707083, 0.00585873, 0.00585873, 0.707082, 2.3, 1, 0.707075, 0.00669836, 0.00669835, 0.707075, 2.33333, 1, 0.707066, 0.00760987, 0.00760987, 0.707066, 2.36667, 1, 0.707054, 0.00862255, 0.00862255, 0.707054, 2.4, 1, 0.70704, 0.00971509, 0.00971509, 0.70704, 2.43333, 1, 0.707023, 0.0108901, 0.0108901, 0.707023, 2.46667, 1, 0.707003, 0.0121504, 0.0121504, 0.707002, 2.5, 1, 0.706978, 0.0134984, 0.0134984, 0.706978, 2.53333, 1, 0.706948, 0.0149688, 0.0149688, 0.706948, 2.56667, 1, 0.706913, 0.0165351, 0.0165351, 0.706913, 2.6, 1, 0.706873, 0.0181997, 0.0181997, 0.706873, 2.63333, 1, 0.706825, 0.0199654, 0.0199654, 0.706825, 2.66667, 1, 0.70677, 0.0218347, 0.0218347, 0.70677, 2.7, 1, 0.706704, 0.0238476, 0.0238476, 0.706704, 2.73333, 1, 0.70663, 0.0259721, 0.0259721, 0.70663, 2.76667, 1, 0.706544, 0.0282107, 0.0282107, 0.706544, 2.8, 1, 0.706446, 0.0305661, 0.0305661, 0.706446, 2.83333, 1, 0.706334, 0.0330409, 0.0330409, 0.706334, 2.86667, 1, 0.706206, 0.0356801, 0.0356801, 0.706206, 2.9, 1, 0.706061, 0.0384465, 0.0384465, 0.706061, 2.93333, 1, 0.705897, 0.0413426, 0.0413426, 0.705897, 2.96667, 1, 0.705713, 0.0443708, 0.0443708, 0.705713, 3, 1, 0.705507, 0.0475337, 0.0475337, 0.705507, 3.03333, 1, 0.705274, 0.0508815, 0.0508815, 0.705274, 3.06667, 1, 0.705013, 0.0543716, 0.0543716, 0.705013, 3.1, 1, 0.704724, 0.0580063, 0.0580063, 0.704723, 3.13333, 1, 0.704402, 0.061788, 0.061788, 0.704402, 3.16667, 1, 0.704046, 0.0657191, 0.0657191, 0.704046, 3.2, 1, 0.703648, 0.0698548, 0.0698548, 0.703648, 3.23333, 1, 0.703209, 0.0741469, 0.0741469, 0.703209, 3.26667, 1, 0.702725, 0.0785977, 0.0785977, 0.702725, 3.3, 1, 0.702194, 0.0832094, 0.0832094, 0.702194, 3.33333, 1, 0.701612, 0.0879839, 0.0879839, 0.701612, 3.36667, 1, 0.700967, 0.0929813, 0.0929813, 0.700967, 3.4, 1, 0.700262, 0.0981481, 0.0981481, 0.700262, 3.43333, 1, 0.699493, 0.103486, 0.103486, 0.699493, 3.46667, 1, 0.697439, 0.116527, 0.116527, 0.697439, 3.5, 1, 0.690548, 0.152129, 0.152129, 0.690548, 3.53333, 1, 0.679812, 0.194565, 0.194565, 0.679812, 3.56667, 1, 0.665981, 0.237634, 0.237634, 0.66598, 3.58333, 1, 0.657949, 0.259042, 0.259042, 0.657949)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Clip")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Clip")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_nbv1y"]
+resource_name = "Shoot"
+length = 0.2
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0.21644, 0.976296, 0.2, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_r3q61"]
+resource_name = "SlideAction"
+length = 3.91667
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slide")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3, 3.33333, 1, -0.168097, 0.526531, 0.3, 3.36667, 1, -0.170544, 0.526531, 0.3, 3.4, 1, -0.17473, 0.526531, 0.3, 3.43333, 1, -0.184768, 0.526531, 0.3, 3.46667, 1, -0.199195, 0.526531, 0.3, 3.5, 1, -0.210972, 0.526531, 0.3, 3.53333, 1, -0.23453, 0.526531, 0.3, 3.56667, 1, -0.254553, 0.526531, 0.3, 3.6, 1, -0.270798, 0.526531, 0.3, 3.63333, 1, -0.287259, 0.526531, 0.3, 3.66667, 1, -0.312163, 0.526531, 0.3, 3.7, 1, -0.332019, 0.526531, 0.3, 3.73333, 1, -0.342571, 0.526531, 0.3, 3.76667, 1, -0.321697, 0.526531, 0.3, 3.8, 1, -0.271585, 0.526531, 0.3, 3.83333, 1, -0.21873, 0.526531, 0.3, 3.86667, 1, -0.177964, 0.526531, 0.3, 3.9, 1, -0.167194, 0.526531, 0.3, 3.91667, 1, -0.166809, 0.526531, 0.3)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Clip")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/3/type = "position_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hammer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+
+[sub_resource type="Animation" id="Animation_qmq43"]
+resource_name = "SpringcaseAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_vp4gi"]
+resource_name = "SpringholderAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_vtwv1"]
+resource_name = "TriggerAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="Animation" id="Animation_85iun"]
+resource_name = "TriggerGuardAction"
+length = 1.54167
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.57098, -0.10632, 0.320156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.545966, 0.334701, 0.375)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hammer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707107, 0, 0, 0.707107)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Slide")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.166809, 0.526531, 0.3)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pccdp"]
+_data = {
+"ClipAction": SubResource("Animation_sjtr7"),
+"CylinderAction": SubResource("Animation_75i14"),
+"GripAction": SubResource("Animation_ogh5g"),
+"MuzzleAction": SubResource("Animation_q0wnw"),
+"MuzzlePlateAction": SubResource("Animation_ab2m5"),
+"PlaneAction": SubResource("Animation_e4406"),
+"Shoot": SubResource("Animation_nbv1y"),
+"SlideAction": SubResource("Animation_r3q61"),
+"SpringcaseAction": SubResource("Animation_qmq43"),
+"SpringholderAction": SubResource("Animation_vp4gi"),
+"TriggerAction": SubResource("Animation_vtwv1"),
+"TriggerGuardAction": SubResource("Animation_85iun")
+}
+
+[node name="M1911_V1" instance=ExtResource("1_p3f1y")]
+
+[node name="Slide" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.166809, 0.526531, 0.3)
+
+[node name="Hammer" parent="." index="8"]
+transform = Transform3D(0.246517, 0, 0, 0, -1.07756e-08, -0.246517, 0, 0.246517, -1.07756e-08, -0.545966, 0.334701, 0.375)
+
+[node name="Clip" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.57098, -0.10632, 0.320156)
+
+[node name="AnimationPlayer" parent="." index="11"]
+libraries = {
+"": SubResource("AnimationLibrary_pccdp"),
+"M1911Anim": ExtResource("2_rsa6b")
+}
